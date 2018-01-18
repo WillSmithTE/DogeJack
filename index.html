@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>        "
+        <script src="ang.js"></script>
+    </head>
+    <body ng-app="app">
+        <h1>this is h1</h1>
+        <div ng-controller="homeController">
+            <button ng-click="register()">show</button>
+            <p ng-if="show">THIS IS A FORM</p>
+            <a ui-sref="root.register">
+                <button>register</button>
+            </a>
+        </div>
+    </body>
+</html>
