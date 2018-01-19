@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="bower_components/tv4/tv4.js"></script>
+    <script type="text/javascript" src="bower_components/objectpath/lib/ObjectPath.js"></script>
+    <script type="text/javascript" src="bower_components/angular-schema-form/dist/schema-form.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-schema-form/dist/bootstrap-decorator.min.js"></script>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
@@ -35,26 +41,11 @@
                     <li>
                         <a ui-sref="play">Play</a>
                     </li>
-                    <li>
-                        <a class="btn btn-default btn-outline btn-circle" data-toggle="collapse" href="#nav-collapse3" aria-expanded="false" aria-controls="nav-collapse3">Search</a>
-                    </li>
                 </ul>
-                <div class="collapse nav navbar-nav nav-collapse" id="nav-collapse3">
-                    <form class="navbar-form navbar-right" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search" />
-                        </div>
-                        <button type="submit" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                        </button>
-                    </form>
-                </div>
+
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
-    <!-- /.navbar -->
     <div class="dogify">
         <div ui-view></div>
     </div>
