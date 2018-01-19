@@ -1,18 +1,16 @@
 var app = angular.module('app', ['ui.router']);
 
-app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/home');
 
-    $stateProvider.state('/home', {
+    $stateProvider.state('home', {
         url: '/home',
         templateUrl: 'home.html',
         controller: 'homeController'
     }).state('register', {
-        cache: false,
         url: '/register',
         templateUrl: 'register.html'
     }).state('login', {
-        cache: false,
         url: '/login',
         templateUrl: 'login.html'
     });
@@ -22,7 +20,7 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', functio
         requireBase: false
     });
 
-}]);
+});
 
 app.controller('homeController', function ($scope) {
     $scope.visible = false;
