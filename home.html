@@ -1,0 +1,28 @@
+<div align="center">
+    <h1>BLACKJACK GONE DOGE</h1>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script> "
+        <script src="ang.js"></script>
+
+    </head>
+    <div>
+        <video loop autoplay>
+            <source src="img/HeadBob.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <body ng-app="app">
+        <div ng-controller="homeController">
+            <button ng-click="show()">show</button>
+            <p ng-if="visible">THIS IS A FORM</p>
+            <a ui-sref="register">
+                <button>register</button>
+            </a>
+            <a ui-sref="login">
+                <button>login</button>
+            </a>
+        </div>
+    </body>
+</div>
