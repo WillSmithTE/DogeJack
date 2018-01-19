@@ -1,5 +1,16 @@
 div.dogify { 
-    background-image: url("img/DogeWallpaper.jpg");
+    background-image: url("../img/DogeWallpaper.jpg");
+}
+input {
+    margin-left: 10px;
+}
+label {
+    margin-top: 5px;
+    display: block;
+}
+.required:after {
+    content:" *";
+    color: #D96E57;
 }
 
 .navbar-brand { position: relative; z-index: 2; }
