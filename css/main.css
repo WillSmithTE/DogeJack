@@ -4,6 +4,7 @@ div.dogify {
 .buttons {
     display:block;
     margin-top: 5px;
+    margin-bottom: 5px;
 }
 label {
     margin-top: 5px;
