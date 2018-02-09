@@ -1,10 +1,10 @@
 var app = angular.module('app', ['ui.router']);
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider.state('home', {
-        url: '/home',
+        url: '/',
         templateUrl: 'partials/home.html',
         controller: 'homeController'
     }).state('register', {
@@ -25,10 +25,10 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         templateUrl: 'partials/play.html'
     });
 
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-    });
+    // $locationProvider.html5Mode({
+    //     enabled: true,
+    //     requireBase: false
+    // });
 
 });
 
@@ -43,6 +43,11 @@ app.controller('homeController', function ($scope) {
     }
 
 }).controller('registerController', function ($scope) {
+    $scope.codeClicked = false;
+    $scope.clickCode = function() {
+        console.log('click');
+        $scope.codeClicked = true;
+    }
 
 }).controller('loginController', function ($scope) {
 

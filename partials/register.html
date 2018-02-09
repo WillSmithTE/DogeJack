@@ -2,6 +2,8 @@
 <html lang="en">
 
 <h1>Register now and win some big buck dogey doos</h1>
+<img src="../img/DogePokerLong.jpg" class="codePic" ng-show="!codeClicked" ng-click="clickCode()">
+
 <form name="registerForm" submit="register()" role="form">
     <label class="required" for="name">Name</label>
     <input type="text" name="name" id="name" ng-model="user.name" required />
@@ -9,15 +11,18 @@
     <input class="required" type="text" name="username" id="username" ng-model="user.username" required />
     <label class="required" for="password">Password</label>
     <input class="required" type="password" name="password" id="password" ng-model="user.password" required />
-    <label class="required" for="confirmPassword">Configm Password</label>
-    <input class="required" type="password" name="confirmPassword" id="confirmPassword" ng-model="user.confirmPassword" required />
+    <label class="required" for="confirmPassword">Confirm Password</label>
+    <input class="required" type="password" name="confirmPassword" id="confirmPassword" ng-model="user.confirmPassword" required/>
     <label class="required" for="email">Email</label>
     <input class="required" type="email" name="email" id="email" ng-model="user.email" required/>
     <label for="country">Country</label>
     <select class="form-control bfh-countries" ng-model="user.country"></select>
-    <label for="terms">By clicking on Submit, you agree to the
+    <label ng-if="codeClicked" for="code">Code</label>
+    <input type="text" name="code" id="code" ng-model="user.code" ng-if="codeClicked" />
+    <label>By clicking on Submit, you agree to the
         <a target="_blank" ui-sref="terms">terms and conditions</a>.</label>
-    <input type="submit" />
+    <input style="margin-top:3px" type="submit" />
 </form>
+
 
 </html>
