@@ -17,6 +17,12 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     }).state('terms', {
         url: '/terms',
         templateUrl: 'partials/terms.html'
+    }).state('profile', {
+        url: '/profile',
+        templateUrl: 'partials/profile.html'
+    }).state('play', {
+        url: '/play',
+        templateUrl: 'partials/play.html'
     });
 
     $locationProvider.html5Mode({
