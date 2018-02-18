@@ -1,3 +1,7 @@
+.bottomBar {
+    text-align: right;
+    display: block;
+}
 div.dogify { 
     background-image: url("../img/DogeWallpaper.jpg");
 }
