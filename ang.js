@@ -45,7 +45,6 @@ app.controller('homeController', function ($scope) {
 }).controller('registerController', function ($scope) {
     $scope.codeClicked = false;
     $scope.clickCode = function() {
-        console.log('click');
         $scope.codeClicked = true;
     }
 
