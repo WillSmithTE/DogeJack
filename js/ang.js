@@ -1,13 +1,6 @@
-var app = angular.module('app', ['ui.router', 'auth0.auth0']).config(config);
+var app = angular.module('app', ['ui.router', 'auth0.auth0']);
 
-config.$inject = [
-    $stateProvider,
-    $locationProvider,
-    $urlRouterProvider,
-    angularAuth0Provider
-];
-
-function config($stateProvider, $urlRouterProvider, $locationProvider, angularAuth0Provider) {
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, angularAuth0Provider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider.state('home', {
@@ -46,7 +39,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, angularAu
     //     requireBase: false
     // });
 
-};
+});
 
 app.controller('homeController', function ($scope) {
     $scope.visible = false;
