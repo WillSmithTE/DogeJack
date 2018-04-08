@@ -1,6 +1,15 @@
-var app = angular.module('app', ['ui.router', 'auth0.auth0']);
+import { AuthService } from './AuthService';
 
-app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, angularAuth0Provider) {
+var app = angular.module('app', ['ui.router', 'auth0.auth0']).config(configRoutesAndAuth);
+
+configRoutesAndAuth.$inject = [
+    '$stateProvider',
+    '$locationProvider',
+    '$urlRouterProvider',
+    'angularAuth0Provider'
+];
+
+function configRoutesAndAuth($stateProvider, $locationProvider, $urlRouterProvider, angularAuth0Provider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider.state('home', {
@@ -13,7 +22,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, angu
         controller: 'registerController'
     }).state('login', {
         url: '/login',
-        templateUrl: 'partials/login.html'
+        templateUrl: 'partials/login.html',
+        controller: AuthService.SERVICE_NAME
     }).state('terms', {
         url: '/terms',
         templateUrl: 'partials/terms.html'
@@ -30,7 +40,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, angu
         domain: 'willsmith.au.auth0.com',
         responseType: 'token id_token',
         audience: 'https://willsmith.au.auth0.com/userinfo',
-        redirectUri: 'http://localhost:3000/play',
+        redirectUri: 'http://localhost:8080/#!/play',
         scope: 'openid'
     });
     // Removes hashes from urls
@@ -39,7 +49,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, angu
     //     requireBase: false
     // });
 
-});
+};
 
 app.controller('homeController', function ($scope) {
     $scope.visible = false;
@@ -56,8 +66,6 @@ app.controller('homeController', function ($scope) {
     $scope.clickCode = function () {
         $scope.codeClicked = true;
     }
-
-}).controller('loginController', function ($scope) {
 
 });
 
